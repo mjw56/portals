@@ -2,6 +2,7 @@ var babel = require('rollup-plugin-babel');
 var commonjs = require('rollup-plugin-commonjs');
 var resolve = require('rollup-plugin-node-resolve');
 var replace = require('rollup-plugin-replace');
+var uglify = require('rollup-plugin-uglify');
 
 var config = {
     entry: 'main.js',
@@ -21,7 +22,8 @@ var config = {
         }),
         replace({
             'process.env.NODE_ENV': JSON.stringify( 'production' )
-        })
+        }),
+        uglify()
     ]
 };
 
