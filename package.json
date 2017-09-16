@@ -17,6 +17,6 @@
   },
   "scripts": {
     "build": "rollup -c rollup.config.js",
-    "start": "serve"
+    "start": "serve --open"
   }
 }
