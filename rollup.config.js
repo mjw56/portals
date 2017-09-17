@@ -5,9 +5,11 @@ var replace = require('rollup-plugin-replace');
 var uglify = require('rollup-plugin-uglify');
 
 var config = {
-    entry: 'main.js',
-    dest: 'build.js',
-    format: 'cjs',
+    input: 'main.js',
+    output: {
+        file: 'build.js',
+        format: 'cjs'
+    },
     plugins: [
         babel({
             babelrc: false,
@@ -23,7 +25,7 @@ var config = {
         replace({
             'process.env.NODE_ENV': JSON.stringify( 'production' )
         }),
-        uglify()
+        // uglify()
     ]
 };
 
